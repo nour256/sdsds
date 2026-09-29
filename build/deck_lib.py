@@ -226,7 +226,7 @@ def footer(slide, text, dark=False, sz=10):
 
 
 def page_number(slide, n, dark=False):
-    return textbox(slide, 9.14, 5.24, 0.39, 0.21, [para([(f'{n:02d}', 10, MIST if dark else GREY)], algn='r')], name='Slide number')
+    return textbox(slide, 9.14, 5.24, 0.39, 0.21, [para([(f'{n:02d}', 10, MIST if dark else GREY)], algn='l')], name='Slide number')
 
 
 def headline(slide, lines, x=0.59, y=1.17, w=8.98, sz=34, dark=False, accent_from=None, h=None, name='Headline'):
@@ -396,7 +396,7 @@ class Timing:
             for spid, *_ in items:
                 if spid in sp_ids and spid not in seen:
                     seen.add(spid)
-                    bld.append(E('p:bldP', {'spid': spid, 'grpId': '0'}))
+                    bld.append(E('p:bldP', {'spid': spid, 'grpId': '0', 'animBg': '1'}))
         if len(bld):
             timing.append(bld)
         # insert after transition/AlternateContent, before extLst

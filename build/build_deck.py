@@ -81,7 +81,7 @@ def move(slide, sid, y=None, x=None, h=None, w=None):
 # ============================================================================= SLIDE 1 - TITLE (new)
 s1 = prs.slides.add_slide(layout)
 set_background(s1, DARK_BG)
-picture(s1, IMG_BUCKET, 5.81, 0, 4.19, 5.625, crop=(0.0, 0.05, 0.0, 0.05), name='Photo: shower and bucket')
+picture(s1, IMG_BUCKET, 5.81, 0, 4.19, 5.625, crop=(0.25, 0.05, 0.20, 0.36), name='Photo: shower head')
 # soften the photo edge with a dark overlay strip so the light photo reads as a dark hero slide
 s1_ov = shape(s1, 'rect', 5.81, 0, 4.19, 5.625, fill=DARK_BG, alpha=38, name='Photo overlay')
 s1_lab = label(s1, 'IEN301  ·  PROJECT 1: PROBLEM FRAMING', dark=True)
@@ -117,15 +117,15 @@ s3_lab = label(s3, 'USER & CONTEXT DEFINITION')
 s3_hd = headline(s3, ['Adults in UAE homes', 'who shower with warm water', 'and wait 3–5 minutes for it to arrive'], y=1.05, sz=30)
 s3_sub = textbox(s3, 0.62, 3.05, 8.7, 0.42, [para([('Situation: the tap is on, cold water runs to the drain, and they wait', 17, BLUE, True)])], name='Situation')
 s3_body = textbox(s3, 0.62, 3.50, 8.7, 1.05,
-                  [para([('Outside the bathroom  (“I’m waiting outside” – Interviewee 1)', 14, GREY)], spc_aft=3),
-                   para([('or standing by  (“I just let the water run… and just sit there” – Interviewee 2)', 14, GREY)], spc_aft=3),
-                   para([('Context: UAE / MENA homes with piped hot water; interviewed 27 Sept 2026', 14, GREY)])], name='Context')
+                  [para([('Outside the bathroom (“I’m waiting outside” — Interviewee 1)', 14, GREY)], spc_aft=3),
+                   para([('or standing by (“I just let the water run… and just sit there” — Interviewee 2)', 14, GREY)], spc_aft=3),
+                   para([('Context: UAE homes; interviewed face-to-face, 27 Sept 2026', 14, GREY)])], name='Context')
 s3_foot = footer(s3, 'Based on 2 recorded interviews. Home type, water-heating setup and tenure were not asked yet — to confirm in interview 3.')
 s3_num = page_number(s3, 3)
 set_transition(s3)
 Timing().add((s3_lab, 'fade'), (s3_hd, 'fade'), auto=True).add((s3_sub, 'fade')).add((s3_body, 'wipeLeft')).apply(s3)
 note(3, "Our user is not 'people' or 'residents' in general. It is adults in UAE homes who shower with warm water and wait three to five minutes for it to arrive. "
-        "Both interviewees gave us that range unprompted. The situation is the same for both: the tap is on, cold water runs to the drain, and they wait. "
+        "Both were asked the same open question and answered in minutes without being offered a number: three to four, and three to five. The situation is the same for both: the tap is on, cold water runs to the drain, and they wait. "
         "How they wait differs, and that matters later.",
      "headline on entry. Click 1: situation line. Click 2: the two waiting behaviours and context.",
      "I1 00:22 '3 to 4 minutes'; I2 00:16 '3 to 5 minutes'; I1 00:45; I2 00:40.")
@@ -137,6 +137,7 @@ CLAIMS += [(3, 'Wait 3–4 min', 1, '00:22', 'About 3 to 4 minutes.'),
 # ============================================================================= SLIDE 4 - WHY WATER RUNS (kept, one wording edit)
 s4 = orig[3]
 replace_text(s4, 88, 'from the heater to the shower', 'from where it is heated to the shower')
+replace_text(s4, 92, 'Duration and behavior vary', 'Duration and behaviour vary')
 set_transition(s4)
 Timing().add((85, 'fade'), (86, 'fade'), (87, 'fade'), (88, 'fade'), auto=True).add((89, 'fade'), (90, 'fade'), (91, 'fade')).apply(s4)
 note(4, "Why does water run before use? First, the water sitting in the pipe has cooled since the last shower, and it has to clear before hot water arrives. "
@@ -145,45 +146,47 @@ note(4, "Why does water run before use? First, the water sitting in the pipe has
 
 # ============================================================================= SLIDE 5 - ILLUSTRATIVE CALCULATION (kept + interview line)
 s5 = orig[4]
-move(s5, 104, y=3.72, h=0.42)
-s5_link = textbox(s5, 0.62, 4.20, 8.67, 0.66,
+move(s5, 100, y=1.10); move(s5, 102, y=1.10)
+move(s5, 101, y=2.85); move(s5, 103, y=2.85)
+move(s5, 104, y=3.50, h=0.42)
+s5_link = textbox(s5, 0.62, 4.08, 8.67, 0.66,
                   [para([('Interviews reported 3–5 minute waits, not 30 seconds.', 15, BLUE, True)], spc_aft=2),
                    para([('8.7 L/min × 4 min = about 35 L per shower', 15, BLUE, True)])],
                   name='Interview link')
 set_transition(s5)
 Timing().add((99, 'fade'), (100, 'fade'), (101, 'fade'), auto=True).add((102, 'flyUpFade'), (103, 'fade'), (104, 'fade')).add((s5_link, 'fade')).apply(s5)
 note(5, "Before the interviews, we assumed a thirty-second wait. At the RSB flow rate of 8.7 litres a minute, that is 4.35 litres per shower. "
-        "Then we listened. Both interviewees reported three to five minutes, so the same flow rate gives about 35 litres per shower. "
+        "Then we listened. Mr Ali reported three to four minutes and Ryan three to five; at a four-minute wait the same flow rate gives about 35 litres per shower. "
         "The number is illustrative, but the order of magnitude changed.",
      "'30 seconds' on entry. Click 1: 4.35 litres and the formula. Click 2: the interview line.",
      "I1 00:22; I2 00:16. 8.7 × 4 = 34.8 L.")
-CLAIMS += [(5, 'Reported waits 3–5 min; ~35 L per shower at 4 min', 1, '00:22', 'About 3 to 4 minutes.')]
+CLAIMS += [(5, 'Reported waits 3–5 min; about 35 L per shower at 4 min', 1, '00:22', 'About 3 to 4 minutes.'), (5, 'Reported waits 3–5 min', 2, '00:16', 'Three to five minutes.')]
 
 # ============================================================================= SLIDE 6 - EVIDENCE: METHOD (new)
 s6 = prs.slides.add_slide(layout)
 set_background(s6, LIGHT_BG)
 s6_lab = label(s6, 'EVIDENCE — HOW WE LISTENED')
 s6_n1 = textbox(s6, 0.55, 1.05, 3.0, 1.2, [para([('2', 84, INK, True)])], name='Big number interviews')
-s6_l1 = textbox(s6, 0.62, 2.30, 3.4, 0.6, [para([('recorded interviews', 17, GREY)]), para([('27 September 2026', 14, GREY)])], name='Label interviews')
+s6_l1 = textbox(s6, 0.62, 2.55, 3.4, 0.6, [para([('recorded interviews', 17, GREY)]), para([('27 Sept 2026', 14, GREY)])], name='Label interviews')
 s6_n2 = textbox(s6, 3.75, 1.05, 3.0, 1.2, [para([('5:15', 84, BLUE, True)])], name='Big number minutes')
-s6_l2 = textbox(s6, 3.82, 2.30, 3.4, 0.6, [para([('minutes of recording', 17, BLUE)]), para([('face-to-face, phone-recorded', 14, GREY)])], name='Label minutes')
+s6_l2 = textbox(s6, 3.82, 2.55, 3.4, 0.6, [para([('minutes of recording', 17, BLUE)]), para([('face-to-face, phone-recorded', 14, GREY)])], name='Label minutes')
 s6_method = textbox(s6, 7.0, 1.15, 2.4, 1.9,
                     [para([('SAME 5 QUESTIONS', 11, BLUE, True)], spc_aft=4),
                      para([('Warm or cold?', 13, GREY)], spc_aft=2), para([('How long do you wait?', 13, GREY)], spc_aft=2),
                      para([('How much is lost?', 13, GREY)], spc_aft=2), para([('What do you do meanwhile?', 13, GREY)], spc_aft=2),
                      para([('What happens to the water?', 13, GREY)])], name='Questions')
-s6_who = textbox(s6, 0.62, 3.25, 8.7, 1.5,
+s6_who = textbox(s6, 0.62, 3.42, 8.7, 1.5,
                  [para([('WHO WE INTERVIEWED', 11, BLUE, True)], spc_aft=6),
                   para([('Interviewee 1 — “Mr Ali”: ', 13, INK, True), ('older man · warm showers · waits 3–4 min · waits outside the bathroom · nothing collected', 12, GREY)], spc_aft=7),
                   para([('Interviewee 2 — “Ryan”: ', 13, INK, True), ('young man · warm showers · waits 3–5 min · stays in the bathroom · nothing collected', 12, GREY)], spc_aft=7),
-                  para([('Interviewee 3: ', 13, INK, True), ('[PLACEHOLDER — recording not received; add descriptor when transcribed]', 12, GREY, False, True)])], name='Interviewees')
+                  para([('Interviewee 3: ', 13, INK, True), ('[to add — the 4-minute recording was not received; nothing from it is on these slides]', 12, GREY, False, True)])], name='Interviewees')
 s6_foot = footer(s6, 'Home type, water-heating setup and tenure were not asked. Recordings and timestamps are available for Q&A.')
 s6_num = page_number(s6, 6)
 set_transition(s6)
 Timing().add((s6_lab, 'fade'), (s6_n1, 'fade'), (s6_l1, 'fade'), auto=True).add((s6_n2, 'flyUpFade'), (s6_l2, 'fade')).add((s6_method, 'fade')).add((s6_who, 'wipeLeft')).apply(s6)
 note(6, "Our evidence comes from two recorded, face-to-face interviews on 27 September, about two and a half minutes each, five minutes in total. "
         "We asked both people the same five questions. Mr Ali is an older man who waits outside the bathroom; Ryan is a young man who stays and waits. "
-        "A third interview is planned and its findings are not on these slides yet.",
+        "A third interview was recorded the same day, but its file has not reached us, so nothing from it is on these slides.",
      "'2 interviews' on entry. Click 1: '5:15 minutes'. Click 2: the five questions. Click 3: who we interviewed.",
      "Video files 16.41.50 (2:48) and 16.42.14 (2:27).")
 
@@ -193,10 +196,10 @@ set_background(s7, LIGHT_BG)
 s7_lab = label(s7, 'EVIDENCE — IN THEIR WORDS')
 s7_hd = textbox(s7, 0.59, 0.78, 8.9, 0.5, [para([('Four things we heard', 26, INK, True)])], name='Headline')
 QUOTES = [
-    ('“About 3 to 4 minutes.”', 'Interviewee 1 · older man, warm showers · 00:22', 'How long do you wait for warm water?'),
-    ('“I just let the water run until it gets warm and just sit there.”', 'Interviewee 2 · young man · 00:40', 'What do you do while you wait?'),
-    ('“I’m waiting outside.”', 'Interviewee 1 · 00:45', 'What do you do while you wait?'),
-    ('“No idea, but… I would say at least a bucket.”', 'Interviewee 1 · 00:34', 'How much water is lost?'),
+    ('“About 3 to 4 minutes.”', 'Interviewee 1, older man · 00:22', 'How long do you wait for warm water?'),
+    ('“I just let the water run until it gets warm and just sit there.”', 'Interviewee 2, young man · 00:40', 'What do you do while you wait?'),
+    ('“I’m waiting outside.”', 'Interviewee 1, older man · 00:45', 'What do you do while you wait?'),
+    ('“No idea, but… I would say at least a bucket.”', 'Interviewee 1, older man · 00:34', 'How much water is lost?'),
 ]
 s7_cards = []
 cw, ch, gx, gy = 4.20, 1.62, 0.28, 0.22
@@ -217,7 +220,7 @@ for card, mark, qt, at in s7_cards:
 t.apply(s7)
 note(7, "Here is what we heard, word for word. Mr Ali: about three to four minutes. Ryan: I just let the water run until it gets warm and just sit there. "
         "Mr Ali again: I'm waiting outside. And when we asked how much is lost: no idea, at least a bucket. "
-        "Nobody measures the wait, and nobody is doing anything with the water.",
+        "Nobody measures the loss, and nobody is doing anything with the water.",
      "headline on entry. Click 1–4: one quote per click, left to right, top to bottom.",
      "I1 00:22; I2 00:40; I1 00:45; I1 00:34. Also I2 00:16 '3 to 5 minutes', I1 00:56 'goes down the drain', I2 00:30 'probably a lot'.")
 CLAIMS += [(7, 'Quote: 3–4 minutes', 1, '00:22', 'About 3 to 4 minutes.'),
@@ -230,8 +233,8 @@ s8 = prs.slides.add_slide(layout)
 set_background(s8, DARK_BG)
 s8_lab = label(s8, 'EVIDENCE — WHAT WE DID NOT KNOW AT THE START', dark=True)
 SURPRISES = [
-    ('Minutes, not seconds', ['We had assumed about 30 seconds.', 'Both interviewees said 3–5 minutes: six to ten times longer.']),
-    ('Nobody measures the loss', ['“No idea… at least a bucket.”  “I don’t know the exact number.”', 'The run-off is invisible while it happens.']),
+    ('Minutes, not seconds', ['We had assumed about 30 seconds.', 'They said 3–4 and 3–5 minutes: six to ten times longer.']),
+    ('Nobody measures the loss', ['“No idea… at least a bucket.”  “I don’t know the exact number…”', 'The run-off is invisible while it happens.']),
     ('Waiting looks different in each home', ['One leaves the room (“I’m waiting outside”); one stays (“just sit there”).', 'Either way, the water goes down the drain.']),
 ]
 s8_items = []
@@ -254,8 +257,16 @@ note(8, "Three things we did not know at the start. One: the wait is minutes, no
      "label on entry. Click 1–3: one finding per click.",
      "I1 00:22, I2 00:16 (wait); I1 00:34, I2 00:30 (no idea); I1 00:45, I2 00:40 (behaviour); I1 00:56, I2 00:52 (drain).")
 CLAIMS += [(8, 'Wait 6–10× the 30 s assumption', 1, '00:22', 'About 3 to 4 minutes.'),
-           (8, 'Nobody measures the loss', 2, '00:30', "I don't know the exact number, but probably a lot. [unclear]"),
+           (8, 'Wait 6–10× the 30 s assumption', 2, '00:16', 'Three to five minutes.'),
+           (8, 'Nobody measures the loss', 1, '00:34', "No idea… I would say at least a bucket."),
+           (8, 'Nobody measures the loss', 2, '00:30', "I don't know the exact number, but probably a lot."),
+           (8, 'One leaves the room, one stays', 1, '00:45', "I'm waiting outside."),
+           (8, 'One leaves the room, one stays', 2, '00:40', 'I just let the water run until it gets warm and just sit there.'),
+           (8, 'Water goes down the drain (both)', 1, '00:56', 'No, it just goes down the drain.'),
            (8, 'Water goes down the drain (both)', 2, '00:52', 'Nothing, it just… / Yeah.')]
+CLAIMS += [(6, 'Descriptor: waits 3–4 min, waits outside', 1, '00:22', 'About 3 to 4 minutes.'), (6, 'Descriptor: waits outside', 1, '00:45', "I'm waiting outside."),
+           (6, 'Descriptor: waits 3–5 min, stays', 2, '00:16', 'Three to five minutes.'), (6, 'Descriptor: stays', 2, '00:40', 'I just let the water run until it gets warm and just sit there.'),
+           (6, 'Descriptor: nothing collected', 1, '00:56', 'No, it just goes down the drain.'), (6, 'Descriptor: nothing collected', 2, '00:52', 'Nothing, it just… / Yeah.')]
 
 # ============================================================================= SLIDE 9 - KEY NUMBERS (new)
 s9 = prs.slides.add_slide(layout)
@@ -282,11 +293,11 @@ t.add((s9_cmp, 'fade'))
 t.apply(s9)
 note(9, "We replaced the unsourced yearly figures from our first draft with a calculation you can check on the slide. "
         "8.7 litres a minute, times the reported wait, times one shower a day, times 365. "
-        "Three minutes gives about nine and a half thousand litres a year; four minutes about twelve and a half thousand; five minutes about sixteen thousand. "
+        "Three minutes gives about nine and a half thousand litres a year; four minutes about twelve thousand seven hundred; five minutes about sixteen thousand. "
         "Our original thirty-second assumption would have been under sixteen hundred.",
      "formula on entry. Click 1–3: the three yearly figures. Click 4: the comparison line.",
      "Wait times: I1 00:22, I2 00:16. Computation in evidence.md §4.")
-CLAIMS += [(9, 'Wait range 3–5 min used in calculation', 2, '00:16', 'Three to five minutes.')]
+CLAIMS += [(9, 'Wait range 3–5 min used in calculation', 1, '00:22', 'About 3 to 4 minutes.'), (9, 'Wait range 3–5 min used in calculation', 2, '00:16', 'Three to five minutes.')]
 
 # ============================================================================= SLIDE 10 - POV STATEMENT (new)
 s10 = prs.slides.add_slide(layout)
@@ -297,9 +308,9 @@ POV_PARTS = [('Adults in UAE homes who shower with warm water', INK), (' need a 
              ('the wait is passive time — they step out or wait it out — and nobody sees how much is lost.', INK)]
 s10_pov = textbox(s10, 0.59, 0.85, 8.9, 2.25, [para([(txt, 22, col, True) for txt, col in POV_PARTS], ln_spc=1.08)], name='POV statement')
 # 4-step flow as native shapes
-STEPS = [('Turn on the shower', 'power'), ('Cold water runs to the drain', 'drop'), ('Wait 3–5 minutes', 'clock'), ('Shower', 'shower')]
+STEPS = [('Turn on the shower', 'power'), ('Cold water to the drain', 'drop'), ('Wait 3–5 minutes', 'clock'), ('Shower', 'shower')]
 s10_steps = []
-sx0, sy, sw = 0.62, 3.45, 2.05
+sx0, sy, sw = 1.22, 3.45, 2.05
 for i, (cap, icon) in enumerate(STEPS):
     x = sx0 + i * (sw + 0.24)
     ids = []
@@ -319,7 +330,7 @@ for i, (cap, icon) in enumerate(STEPS):
         ids.append(shape(s10, 'roundRect', cx - 0.17, cy - 0.11, 0.34, 0.08, fill=BLUE, name='Icon shower head'))
         for j, dx in enumerate((-0.11, 0.0, 0.11)):
             ids.append(line(s10, cx + dx, cy + 0.02, cx + dx, cy + 0.20, BLUE, 19050, name=f'Icon shower drop {j+1}'))
-    ids.append(textbox(s10, x - 0.1, sy + 0.82, sw - 0.1, 0.5, [para([(cap, 12, GREY)])], name=f'Step caption {i+1}'))
+    ids.append(textbox(s10, cx - 1.0, sy + 0.82, 2.0, 0.5, [para([(cap, 12, GREY)], algn='ctr')], name=f'Step caption {i+1}'))
     if i < 3:
         ids.append(shape(s10, 'chevron', x + sw - 0.10, sy + 0.24, 0.16, 0.24, fill=MIST, name=f'Step arrow {i+1}'))
     s10_steps.append(ids)
@@ -346,9 +357,9 @@ set_background(s11, LIGHT_BG)
 s11_lab = label(s11, 'CONSTRAINTS — WHY THE PROBLEM PERSISTS')
 s11_hd = textbox(s11, 0.59, 0.78, 8.9, 0.5, [para([('Why the water keeps running', 26, INK, True)])], name='Headline')
 CARDS = [
-    ('HABIT', 'Turn it on, then wait — outside the room or standing by. The run-off is never handled.', 'Interviews 1–2'),
-    ('COST SIGNAL', 'Neither person could estimate the loss (“at least a bucket”). Nothing in the bill or the bathroom shows it.', 'Interviews 1–2 · context'),
-    ('SYSTEMS', 'Water is heated far from the shower; the pipe must clear every time. Re-plumbing is rarely an option.', 'Context (EPA 2026) · to confirm'),
+    ('HABIT', 'Turn it on, then wait\u00a0— outside the room or standing by. The run-off is never handled.', 'Interviews 1–2'),
+    ('COST SIGNAL', 'Neither person could estimate the loss (“at least a bucket”). Nothing in the moment makes it visible.', 'Interviews 1–2 · context'),
+    ('SYSTEMS', 'Water is heated far from the shower; the pipe must clear every time. Changing the plumbing is rarely an option.', 'EPA 2026 · to confirm'),
     ('CLIMATE', 'Colder inlet water in winter should lengthen the wait. Not covered in either interview.', 'To verify — interview 3'),
     ('ROUTINE', 'The wait sits inside getting ready; extra steps compete with time. Not raised by either interviewee.', 'Assumption — to verify'),
 ]
@@ -378,19 +389,23 @@ note(11, "Why does this persist? Habit: you turn it on and wait; the run-off is 
      "headline on entry. Click 1–5: one card per click. Click 6: the context footnote.",
      "I1 00:45, 00:34, 00:56; I2 00:40, 00:30, 00:52.")
 CLAIMS += [(11, 'Habit: turn on and wait, run-off never handled', 1, '00:56', 'No, it just goes down the drain.'),
-           (11, 'Cost signal: cannot estimate the loss', 1, '00:34', "No idea… I would say at least a bucket.")]
+           (11, 'Habit: turn on and wait, run-off never handled', 2, '00:52', 'Nothing, it just… / Yeah.'),
+           (11, 'Habit: outside the room or standing by', 1, '00:45', "I'm waiting outside."),
+           (11, 'Habit: outside the room or standing by', 2, '00:40', 'I just let the water run until it gets warm and just sit there.'),
+           (11, 'Cost signal: cannot estimate the loss', 1, '00:34', "No idea… I would say at least a bucket."),
+           (11, 'Cost signal: cannot estimate the loss', 2, '00:30', "I don't know the exact number, but probably a lot.")]
 
 # ============================================================================= SLIDE 12 - WHAT USERS DO TODAY (new, table-style rows)
 s12 = prs.slides.add_slide(layout)
 set_background(s12, LIGHT_BG)
 s12_lab = label(s12, 'WHAT USERS DO TODAY — AND WHY IT DOES NOT WORK')
-s12_hd = textbox(s12, 0.59, 0.78, 8.9, 0.5, [para([('Today’s options all leave the water running', 26, INK, True)])], name='Headline')
+s12_hd = textbox(s12, 0.59, 0.78, 8.9, 0.5, [para([('None of today’s options fits these users', 26, INK, True)])], name='Headline')
 ROWS = [
     ('Turn it on and walk away', 'Interviewee 1: “I’m waiting outside.”', 'Nobody is in the room when warm water arrives, so the run continues until they return.'),
     ('Stand by and wait', 'Interviewee 2: “just sit there.”', 'Passive minutes with the water in view — and it still goes down the drain.'),
-    ('Collect it in a bucket', 'Neither does it: “it just goes down the drain.”', 'Extra handling and storage in a rushed moment; one user is not even in the room.'),
+    ('Collect it in a bucket', 'Interviewee 1: “it just goes down the drain.”', 'Neither interviewee does it. Extra handling and storage, and one user is not even in the room.'),
     ('Thermostatic shut-off valve', 'Published approach (EPA 2026)', 'Stops the flow once warm water arrives; the cold slug still drains first, and it needs installing.'),
-    ('Recirculation loop', 'Published approach (EPA 2026)', 'Keeps the pipe warm, but it is a plumbing change — out of reach for tenants; ongoing energy cost.'),
+    ('Recirculation loop', 'Published approach (EPA 2026)', 'Keeps the pipe warm, but it means re-plumbing the home (not an option for tenants; tenure not asked) and adds an energy cost.'),
 ]
 x1, x2, w1, w2 = 0.62, 4.05, 3.25, 5.35
 y = 1.42
@@ -414,12 +429,13 @@ for a, b, rl in s12_rows:
     t.add((a, 'wipeLeft'), (b, 'wipeLeft'), (rl, 'wipeLeft'))
 t.apply(s12)
 note(12, "What do users do today? Mr Ali turns it on and walks away; Ryan stands by and waits. Neither collects the water; a bucket means handling, and one of them is not even in the room. "
-         "The published options do not fit these users either: a shut-off valve still drains the cold slug first and needs installing, and a recirculation loop is a plumbing change most tenants cannot make.",
+         "The published options do not fit these users either: a shut-off valve still drains the cold slug first and needs installing, and a recirculation loop means re-plumbing the home, which a tenant cannot do; we did not ask about tenure.",
      "headers on entry. Click 1–5: one row per click.",
      "I1 00:45, 00:56; I2 00:40, 00:52. EPA 2026 for rows 4–5.")
 CLAIMS += [(12, 'Turn it on and walk away', 1, '00:45', "I'm waiting outside."),
            (12, 'Stand by and wait', 2, '00:40', 'I just let the water run until it gets warm and just sit there.'),
-           (12, 'Nobody collects the water', 1, '00:56', 'No, it just goes down the drain.')]
+           (12, 'Nobody collects the water', 1, '00:56', 'No, it just goes down the drain.'),
+           (12, 'Nobody collects the water', 2, '00:52', 'Nothing, it just… / Yeah.')]
 
 # ============================================================================= SLIDE 13 - REFLECTION 01: ASSUMPTION (dark hero)
 s13 = prs.slides.add_slide(layout)
@@ -455,7 +471,7 @@ for i, (q, who) in enumerate(EV):
     s14_q.append((qt, at))
 s14_big = textbox(s14, 6.45, 1.35, 3.2, 1.3, [para([('6–10×', 66, SKY, True)])], name='Big number ratio')
 s14_bigl = textbox(s14, 6.5, 2.75, 3.0, 0.9, [para([('longer than we assumed', 17, WHITE)]), para([('3–5 min reported vs 30 s', 14, MIST)])], name='Ratio label')
-s14_foot = footer(s14, 'Both interviews, 27 Sept 2026. Full transcripts and timestamps in evidence.md.', dark=True)
+s14_foot = footer(s14, 'Both interviews, 27 Sept 2026. Transcripts and timestamps: hidden appendix and evidence file.', dark=True)
 s14_num = page_number(s14, 14, dark=True)
 set_transition(s14)
 t = Timing().add((s14_lab, 'fade'), auto=True)
@@ -467,30 +483,32 @@ note(14, "Four lines changed our mind. Three to four minutes. Three to five minu
          "The reported wait is six to ten times longer than we assumed, and the loss is invisible to the people living it.",
      "label on entry. Click 1–4: one quote per click. Click 5: the '6–10×' number.",
      "I1 00:22, 00:34, 00:45; I2 00:16, 00:40.")
-CLAIMS += [(14, '6–10× longer than the 30 s assumption', 2, '00:16', 'Three to five minutes.')]
+CLAIMS += [(14, '6–10× longer than the 30 s assumption', 1, '00:22', 'About 3 to 4 minutes.'), (14, '6–10× longer than the 30 s assumption', 2, '00:16', 'Three to five minutes.'),
+           (14, 'Quote: at least a bucket', 1, '00:34', "No idea… I would say at least a bucket."), (14, 'Quote: waiting outside', 1, '00:45', "I'm waiting outside."),
+           (14, 'Quote: just sit there', 2, '00:40', 'I just let the water run until it gets warm and just sit there.')]
 
 # ============================================================================= SLIDE 15 - REFLECTION 03: HOW THE POV SHARPENED (dark)
 s15 = prs.slides.add_slide(layout)
 set_background(s15, DARK_BG)
 s15_lab = label(s15, 'REFLECTION — 03 / HOW THE POV SHARPENED', dark=True)
 s15_b_lab = textbox(s15, 0.62, 1.05, 4.0, 0.3, [para([('BEFORE', 11, MIST, True)])], name='Before label')
-s15_b = textbox(s15, 0.62, 1.40, 4.0, 1.6, [para([('“Residents waste water while waiting for hot water.”', 22, WHITE, True)], ln_spc=1.05)], name='Before statement')
+s15_b = textbox(s15, 0.62, 1.40, 4.0, 1.6, [para([('Residents waste water while waiting for hot water.', 22, WHITE, True)], ln_spc=1.05)], name='Before statement')
 s15_b_gaps = textbox(s15, 0.62, 3.15, 4.0, 1.5,
-                     [para([('Any resident, anywhere', 14, MIST)], spc_aft=4), para([('No measure of the wait', 14, MIST)], spc_aft=4),
+                     [para([('Any resident, anywhere', 14, MIST)], spc_aft=4), para([('No estimate of the wait', 14, MIST)], spc_aft=4),
                       para([('No reason it persists', 14, MIST)], spc_aft=4), para([('Nothing a team could act on', 14, MIST)])], name='Before gaps')
 s15_arrow = shape(s15, 'chevron', 4.85, 2.45, 0.3, 0.5, fill=SKY, name='Arrow')
 s15_a_lab = textbox(s15, 5.45, 1.05, 4.0, 0.3, [para([('AFTER', 11, SKY, True)])], name='After label')
 s15_a = textbox(s15, 5.45, 1.40, 4.0, 2.9,
                 [para([(txt, 15, SKY if col == BLUE else WHITE, True) for txt, col in POV_PARTS], ln_spc=1.08)], name='After statement')
 s15_a_gaps = textbox(s15, 5.45, 4.35, 4.0, 0.7,
-                     [para([('Specific user · measured wait · observed behaviour · a reason it persists', 12, MIST)])], name='After gains')
-s15_foot = footer(s15, 'Before: our v1 framing. After: grounded in interviews 1–2 (27 Sept 2026).', dark=True)
+                     [para([('Specific user · reported wait (3–5 min)', 12, MIST)], spc_aft=2), para([('self-described behaviour · a reason it persists', 12, MIST)])], name='After gains')
+s15_foot = footer(s15, 'Before: our v1 framing, paraphrased. After: grounded in interviews 1–2 (27 Sept 2026).', dark=True)
 s15_num = page_number(s15, 15, dark=True)
 set_transition(s15)
 Timing().add((s15_lab, 'fade'), (s15_b_lab, 'fade'), (s15_b, 'fade'), auto=True).add((s15_b_gaps, 'wipeLeft')).add((s15_arrow, 'fade'), (s15_a_lab, 'fade'), (s15_a, 'fade')).add((s15_a_gaps, 'fade')).apply(s15)
 note(15, "Here is how the point of view sharpened. Before: residents waste water while waiting for hot water. Any resident, no measure, no cause. "
          "After: adults in UAE homes who shower with warm water need a way to stop the three-to-five-minute warm-up from sending clean water down the drain, because the wait is passive time and nobody sees how much is lost. "
-         "Same moment, but now with a user, a measure, a behaviour and a reason.",
+         "Same moment, but now with a user, a reported wait, a described behaviour and a reason.",
      "'Before' statement on entry. Click 1: its gaps. Click 2: the 'After' statement. Click 3: what it gained.")
 
 # ============================================================================= SLIDE 16 - CLOSING (dark)
@@ -530,7 +548,7 @@ for sl, claim, iv, ts, verb in CLAIMS:
         g['claims'].append(short)
 rows = []
 for (iv, ts), g in sorted(groups.items(), key=lambda kv: (kv[0][0], kv[0][1])):
-    rows.append((', '.join(str(x) for x in g['slides']), '; '.join(g['claims'][:2]), f'Interview {iv}', ts, g['verb'].replace(' [unclear]', '')))
+    rows.append((', '.join(str(x) for x in sorted(g['slides'])), '; '.join(g['claims'][:2]), f'Interview {iv}', ts, g['verb'].replace(' [unclear]', '')))
 rows.append(('3, 6, 8, 11', 'Winter, home type, heating setup, tenure, routine — NOT covered', '—', '—', 'Placeholders on slides; see TODO.md'))
 rows.append(('—', 'Interviewer-supplied figures (6–12 L/min; 30,000 L/yr) — NOT used', 'Interviews 1, 2', '01:03; 00:58', 'Said by the interviewer, unsourced'))
 from pptx.util import Emu as _Emu
@@ -542,7 +560,7 @@ widths = [0.75, 3.1, 0.95, 0.75, 3.15]
 for i, w in enumerate(widths):
     tbl.columns[i].width = emu(w)
 HEAD = ['Slides', 'Claim(s) on slide', 'Source', 'Time', 'Verbatim']
-def style_cell(cell, text, bold, color, sz):
+def style_cell(cell, text, bold, color, sz, top_rule=False):
     tf = cell.text_frame
     tf.text = ''
     p = tf.paragraphs[0]
@@ -555,7 +573,7 @@ def style_cell(cell, text, bold, color, sz):
     tcPr = cell._tc.get_or_add_tcPr()
     for tag in ('a:lnL', 'a:lnR', 'a:lnT', 'a:lnB'):
         ln = E(tag, {'w': '7150', 'cap': 'flat', 'cmpd': 'sng'})
-        if tag == 'a:lnB':
+        if tag == 'a:lnB' or (tag == 'a:lnT' and top_rule):
             ln.append(E('a:solidFill', None, E('a:srgbClr', {'val': RULE})))
         else:
             ln.append(E('a:noFill'))
@@ -565,7 +583,7 @@ for c, h in enumerate(HEAD):
     style_cell(tbl.cell(0, c), h, True, BLUE, 10)
 for r, row in enumerate(rows, start=1):
     for c, val in enumerate(row):
-        style_cell(tbl.cell(r, c), val, c == 1, INK if c in (0, 1) else GREY, 9)
+        style_cell(tbl.cell(r, c), val, c == 1, INK if c in (0, 1) else GREY, 9, top_rule=True)
 for r in range(nrows):
     tbl.rows[r].height = emu(0.24)
 # drop the table style banding flags python-pptx sets, keep the original deck's table style id
