@@ -1,0 +1,68 @@
+SLIDE LIST
+ 1          IEN301  ·  PROJECT 1: PROBLEM FRAMING        | FIRST DROP                                                             | notes  57 w
+ 2          THE MOMENT                                   | Water is / flowing                                                     | notes  46 w
+ 3          USER & CONTEXT DEFINITION                    | Adults in UAE homes / who shower with warm water / and wait 3–5 minute | notes  81 w
+ 4          WHY WATER MAY RUN BEFORE USE                 | Waiting for hot water to arrive                                        | notes  50 w
+ 5          ILLUSTRATIVE CALCULATION                     | seconds of flowing water                                               | notes  65 w
+ 6          EVIDENCE — HOW WE LISTENED                   | recorded interviews / 27 Sept 2026                                     | notes  70 w
+ 7          EVIDENCE — IN THEIR WORDS                    | Four things we heard                                                   | notes  62 w
+ 8          EVIDENCE — WHAT WE DID NOT KNOW AT THE START | Minutes, not seconds                                                   | notes  59 w
+ 9          KEY NUMBERS — ILLUSTRATIVE                   | One shower’s warm-up, scaled to a year                                 | notes  69 w
+10          POINT OF VIEW                                | Adults in UAE homes who shower with warm water need a way to stop the  | notes  65 w
+11          CONSTRAINTS — WHY THE PROBLEM PERSISTS       | Why the water keeps running                                            | notes  79 w
+12          WHAT USERS DO TODAY — AND WHY IT DOES NOT WO | None of today’s options fits these users                               | notes  76 w
+13          REFLECTION — 01 / WHAT WE ASSUMED            | We assumed a / 30-second wait                                          | notes  37 w
+14          REFLECTION — 02 / THE EVIDENCE THAT CHANGED  | “About 3 to 4 minutes.”                                                | notes  53 w
+15          REFLECTION — 03 / HOW THE POV SHARPENED      | Residents waste water while waiting for hot water.                     | notes  77 w
+16          FIRST DROP  ·  IEN301 PROJECT 1              | Questions?                                                             | notes  33 w
+17 (hidden) APPENDIX (HIDDEN) — CLAIM TO RECORDING MAP   | Every on-slide claim, and where to hear it                             | notes  17 w
+
+Spoken notes total (slides 1-16): 979 words = 7.5 min at 130 wpm (hidden slide 17 excluded)
+
+CLAIM -> RECORDING MAP
+  slide  3 | Wait 3–4 min                                     | Interview 1 @ 00:22 | "About 3 to 4 minutes."
+  slide  3 | Wait 3–5 min                                     | Interview 2 @ 00:16 | "Three to five minutes."
+  slide  3 | Waits outside the bathroom                       | Interview 1 @ 00:45 | "I'm waiting outside."
+  slide  3 | Stays in the bathroom                            | Interview 2 @ 00:40 | "I just let the water run until it gets warm and just sit there."
+  slide  5 | Reported waits 3–5 min; about 35 L per shower at | Interview 1 @ 00:22 | "About 3 to 4 minutes."
+  slide  5 | Reported waits 3–5 min                           | Interview 2 @ 00:16 | "Three to five minutes."
+  slide  7 | Quote: 3–4 minutes                               | Interview 1 @ 00:22 | "About 3 to 4 minutes."
+  slide  7 | Quote: let it run and sit there                  | Interview 2 @ 00:40 | "I just let the water run until it gets warm and just sit there."
+  slide  7 | Quote: waiting outside                           | Interview 1 @ 00:45 | "I'm waiting outside."
+  slide  7 | Quote: at least a bucket                         | Interview 1 @ 00:34 | "No idea, but I think it's about… I would say at least a bucket."
+  slide  8 | Wait 6–10× the 30 s assumption                   | Interview 1 @ 00:22 | "About 3 to 4 minutes."
+  slide  8 | Wait 6–10× the 30 s assumption                   | Interview 2 @ 00:16 | "Three to five minutes."
+  slide  8 | Nobody measures the loss                         | Interview 1 @ 00:34 | "No idea… I would say at least a bucket."
+  slide  8 | Nobody measures the loss                         | Interview 2 @ 00:30 | "I don't know the exact number, but probably a lot."
+  slide  8 | One leaves the room, one stays                   | Interview 1 @ 00:45 | "I'm waiting outside."
+  slide  8 | One leaves the room, one stays                   | Interview 2 @ 00:40 | "I just let the water run until it gets warm and just sit there."
+  slide  8 | Water goes down the drain (both)                 | Interview 1 @ 00:56 | "No, it just goes down the drain."
+  slide  8 | Water goes down the drain (both)                 | Interview 2 @ 00:52 | "Nothing, it just… / Yeah."
+  slide  6 | Descriptor: waits 3–4 min, waits outside         | Interview 1 @ 00:22 | "About 3 to 4 minutes."
+  slide  6 | Descriptor: waits outside                        | Interview 1 @ 00:45 | "I'm waiting outside."
+  slide  6 | Descriptor: waits 3–5 min, stays                 | Interview 2 @ 00:16 | "Three to five minutes."
+  slide  6 | Descriptor: stays                                | Interview 2 @ 00:40 | "I just let the water run until it gets warm and just sit there."
+  slide  6 | Descriptor: nothing collected                    | Interview 1 @ 00:56 | "No, it just goes down the drain."
+  slide  6 | Descriptor: nothing collected                    | Interview 2 @ 00:52 | "Nothing, it just… / Yeah."
+  slide  9 | Wait range 3–5 min used in calculation           | Interview 1 @ 00:22 | "About 3 to 4 minutes."
+  slide  9 | Wait range 3–5 min used in calculation           | Interview 2 @ 00:16 | "Three to five minutes."
+  slide 10 | POV: 3–5 minute warm-up                          | Interview 1 @ 00:22 | "About 3 to 4 minutes."
+  slide 10 | POV: 3–5 minute warm-up                          | Interview 2 @ 00:16 | "Three to five minutes."
+  slide 10 | POV: they step out                               | Interview 1 @ 00:45 | "I'm waiting outside."
+  slide 10 | POV: or wait it out                              | Interview 2 @ 00:40 | "I just let the water run until it gets warm and just sit there."
+  slide 10 | POV: nobody sees how much is lost                | Interview 1 @ 00:34 | "No idea… I would say at least a bucket."
+  slide 11 | Habit: turn on and wait, run-off never handled   | Interview 1 @ 00:56 | "No, it just goes down the drain."
+  slide 11 | Habit: turn on and wait, run-off never handled   | Interview 2 @ 00:52 | "Nothing, it just… / Yeah."
+  slide 11 | Habit: outside the room or standing by           | Interview 1 @ 00:45 | "I'm waiting outside."
+  slide 11 | Habit: outside the room or standing by           | Interview 2 @ 00:40 | "I just let the water run until it gets warm and just sit there."
+  slide 11 | Cost signal: cannot estimate the loss            | Interview 1 @ 00:34 | "No idea… I would say at least a bucket."
+  slide 11 | Cost signal: cannot estimate the loss            | Interview 2 @ 00:30 | "I don't know the exact number, but probably a lot."
+  slide 12 | Turn it on and walk away                         | Interview 1 @ 00:45 | "I'm waiting outside."
+  slide 12 | Stand by and wait                                | Interview 2 @ 00:40 | "I just let the water run until it gets warm and just sit there."
+  slide 12 | Nobody collects the water                        | Interview 1 @ 00:56 | "No, it just goes down the drain."
+  slide 12 | Nobody collects the water                        | Interview 2 @ 00:52 | "Nothing, it just… / Yeah."
+  slide 14 | 6–10× longer than the 30 s assumption            | Interview 1 @ 00:22 | "About 3 to 4 minutes."
+  slide 14 | 6–10× longer than the 30 s assumption            | Interview 2 @ 00:16 | "Three to five minutes."
+  slide 14 | Quote: just sit there                            | Interview 2 @ 00:40 | "I just let the water run until it gets warm and just sit there."
+
+NUMBERS: {"per_shower": {"low": 26.099999999999998, "mid": 34.8, "high": 43.5}, "per_year": {"low": 9526.5, "mid": 12701.999999999998, "high": 15877.5}, "v1_per_shower": 4.35, "ratio": [6.0, 10.0]}

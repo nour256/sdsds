@@ -35,5 +35,5 @@ Open items the team must close before presenting. Everything below is either a p
 
 - [ ] Open `IEN_301_Project_1_v2.pptx` in PowerPoint once and step through the builds (notes list the click order per slide). Animations were written as PowerPoint XML (Fade / Wipe-from-left / Fly-in + Fade, 0.4–0.5 s, Fade transition 0.5 s) and checked by parsing and by a LibreOffice round-trip, but not visually in PowerPoint itself.
 - [ ] Slide 17 is a **hidden** appendix (claim → interview → timestamp). Keep it hidden; it is for Q&A.
-- [ ] Rehearse: the speaker notes total 984 spoken words on the 16 visible slides (≈7.6 min at 130 wpm), leaving slack inside the 10-minute slot.
+- [ ] Rehearse: the speaker notes total 996 spoken words on the 16 visible slides (≈7.7 min at 130 wpm), leaving slack inside the 10-minute slot.
 - [ ] Slide 4 wording changed in one place to keep the deck free of the word "heater" ("from where it is heated to the shower"); revert if the course does not mind that word.
